@@ -1,7 +1,7 @@
 ﻿// //////////////////// Bot Basics
 const Discord = require('discord.js');
 const client = new Discord.Client({ forceFetchUsers: true });
-const { prefix, token, adminID } = require('./config.json');
+const { prefix, token, adminID, ytToken } = require('./config.json');
 //* ********************Bot Basics
 
 // //////////////////// Usefull Javascript Capabilities
@@ -19,7 +19,7 @@ sql.open('./score.sqlite');
 
 // //////////////////// Music Bot
 const { YTSearcher } = require('ytsearcher');
-const searcher = new YTSearcher('AIzaSyBjLjc-ytMFRqTCPRN690mkokopQXrYE0A');
+const searcher = new YTSearcher(ytToken);
 const yt = require('ytdl-core');
 const google = require('google');
 const roles = { 'fighter': 'Fighter', 'cleric': 'Cleric', 'paladin': 'Paladin', 'ranger': 'Ranger', 'wizard': 'Wizard', 'sorcerer': 'Sorcerer', 'bard': 'Bard', 'warlock': 'Warlock', 'rogue': 'Rogue', 'druid': 'Druid', 'barbarian': 'Barbarian', 'dm': 'DM' };
